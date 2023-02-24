@@ -8,45 +8,48 @@ const Timer = () => {
 
     useEffect(() => {
 
-        if(timerOn) {
-        setInterval(() => {
-            setSeconds(seconds + 1)
-            
-        }, 1000)} else {
+        if (timerOn) {
+            setInterval(() => {
+                setSeconds(seconds + 1)
+
+            }, 1000)
+        } else {
             clearInterval()
         }
-    
+
 
         return () => clearInterval()
     });
 
-    const stop=()=>{
+    const stop = () => {
         setTimerOn(false)
-      clearInterval();
+        clearInterval();
     }
 
-    const start=()=>{
+    const start = () => {
         setTimerOn(true)
     }
 
-    const formatTime = (seconds) => {
-        let minutes = parseInt(seconds / 60)
-        let sec = seconds < 60 ? seconds : (seconds - (60*minutes))
+    const formatTime = (totalSeconds) => {
+        let totalMinutes = Math.floor(totalSeconds / 60);
+        let hours = Math.floor(totalMinutes / 60);
+        let minutes = totalMinutes % 60;
+        let sec = totalSeconds % 60;
 
-        return `${minutes < 10 ? '0' + minutes: minutes} : ${sec < 10 ? '0' + sec : sec}`
+        return `${hours < 10 ? '0' + hours : hours} : ${minutes < 10 ? '0' + minutes : minutes} : ${sec < 10 ? '0' + sec : sec}`
     }
 
     return (
         <div className="container">
             <div className="timer">
-            <h1>You clicked {count} times</h1>
-            <button className="buttons" onClick={() => setCount(count + 1)}>
-                Click me
-            </button>
-            <h2>Timer</h2>
-            <span className="time">{formatTime(seconds)}</span>
-            <button className="buttons buttons--stop" onClick={stop}>Stop</button>
-            <button className="buttons buttons--start" onClick={start}>Start</button>
+                <h1>You clicked {count} times</h1>
+                <button className="buttons" onClick={() => setCount(count + 1)}>
+                    Click me
+                </button>
+                <h2>Timer</h2>
+                <span className="time">{formatTime(seconds)}</span>
+                <button className="buttons buttons--stop" onClick={stop}>Stop</button>
+                <button className="buttons buttons--start" onClick={start}>Start</button>
             </div>
         </div>
     );
