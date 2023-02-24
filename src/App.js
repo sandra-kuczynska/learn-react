@@ -1,38 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import './App.js';
+import './App.css';
 
 const Timer = () => {
     const [count, setCount] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [timerOn, setTimerOn] = useState(true)
-    let timer
 
     useEffect(() => {
 
         if(timerOn) {
-        timer = setInterval(() => {
+        setInterval(() => {
             setSeconds(seconds + 1)
             if (seconds === 59) {
                 setMinutes(minutes + 1)
                 setSeconds(0)
             }
         }, 1000)} else {
-            clearInterval(timer)
+            clearInterval()
         }
     
 
-        return () => clearInterval(timer)
+        return () => clearInterval()
     });
 
     const stop=()=>{
         setTimerOn(false)
-      clearInterval(timer);
+      clearInterval();
     }
 
     const start=()=>{
         setTimerOn(true)
-        timer()
     }
 
     return (
