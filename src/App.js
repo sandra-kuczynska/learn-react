@@ -4,7 +4,6 @@ import './App.css';
 const Timer = () => {
     const [count, setCount] = useState(0)
     const [seconds, setSeconds] = useState(0)
-    const [minutes, setMinutes] = useState(0)
     const [timerOn, setTimerOn] = useState(true)
 
     useEffect(() => {
@@ -12,10 +11,7 @@ const Timer = () => {
         if(timerOn) {
         setInterval(() => {
             setSeconds(seconds + 1)
-            if (seconds === 59) {
-                setMinutes(minutes + 1)
-                setSeconds(0)
-            }
+            
         }, 1000)} else {
             clearInterval()
         }
@@ -33,6 +29,13 @@ const Timer = () => {
         setTimerOn(true)
     }
 
+    const formatTime = (seconds) => {
+        let minutes = parseInt(seconds / 60)
+        let sec = seconds < 60 ? seconds : (seconds - (60*minutes))
+
+        return `${minutes < 10 ? '0' + minutes: minutes} : ${sec < 10 ? '0' + sec : sec}`
+    }
+
     return (
         <div className="container">
             <div className="timer">
@@ -41,7 +44,7 @@ const Timer = () => {
                 Click me
             </button>
             <h2>Timer</h2>
-            <span className="time">{minutes}:{seconds<10? "0"+seconds: seconds}</span>
+            <span className="time">{formatTime(seconds)}</span>
             <button className="buttons buttons--stop" onClick={stop}>Stop</button>
             <button className="buttons buttons--start" onClick={start}>Start</button>
             </div>
