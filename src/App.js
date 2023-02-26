@@ -42,14 +42,18 @@ const Timer = () => {
     return (
         <div className="container">
             <div className="timer">
-                <h1>You clicked {count} times</h1>
-                <button className="buttons" onClick={() => setCount(count + 1)}>
+            <h1 className="header">Timer App</h1>
+            <button className="buttons buttons--click" onClick={() => setCount(count + 1)}>
                     Click me
                 </button>
-                <h2>Timer</h2>
+                <p className="title">You clicked <span className="count">{count}</span> times</p>
+                
+                <p className="title title--margin-top">Timer</p>
                 <span className="time">{formatTime(seconds)}</span>
-                <button className="buttons buttons--stop" onClick={stop}>Stop</button>
-                <button className="buttons buttons--start" onClick={start}>Start</button>
+                <div className="button-box">
+                    <button className="buttons buttons--stop" onClick={stop}></button>
+                    <button className="buttons buttons--start" onClick={start}></button>
+                </div>
             </div>
         </div>
     );
