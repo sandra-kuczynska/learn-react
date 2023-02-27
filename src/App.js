@@ -34,11 +34,13 @@ const Timer = () => {
         setTimerOn(!timerOn);
       };
 
+    const handleClick = () => { setCount(state => state + 1) }
+
     return (
         <div className="container">
             <div className="timer">
             <h1 className="header">Timer App</h1>
-            <button className="buttons buttons--click" onClick={() => setCount(count + 1)}>
+            <button className="buttons buttons--click" onClick={handleClick}>
                     Click me
                 </button>
                 <p className="title">You clicked <span className="count">{count}</span> times</p>
