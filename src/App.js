@@ -2,33 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const Timer = () => {
-    const [count, setCount] = useState(0)
-    const [seconds, setSeconds] = useState(0)
-    const [timerOn, setTimerOn] = useState(true)
+    const [count, setCount] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    const [timerOn, setTimerOn] = useState(false);
 
     useEffect(() => {
-
+        let interval;
         if (timerOn) {
-            setInterval(() => {
+            interval = setInterval(() => {
                 setSeconds(seconds + 1)
-
-            }, 1000)
-        } else {
-            clearInterval()
+            }, 1000);
+        } else if (!timerOn) {
+            clearInterval(interval)
         }
-
-
-        return () => clearInterval()
-    });
-
-    const stop = () => {
-        setTimerOn(false)
-        clearInterval();
-    }
-
-    const start = () => {
-        setTimerOn(true)
-    }
+        return () => clearInterval(interval);
+    }, [timerOn, seconds]
+    );
 
     const formatTime = (totalSeconds) => {
         let totalMinutes = Math.floor(totalSeconds / 60);
@@ -38,6 +27,12 @@ const Timer = () => {
 
         return `${hours < 10 ? '0' + hours : hours} : ${minutes < 10 ? '0' + minutes : minutes} : ${sec < 10 ? '0' + sec : sec}`
     }
+
+    const timerToggle = timerOn ? "Stop" : "Start"
+
+    const changeTimerOn = () => {
+        setTimerOn(!timerOn);
+      };
 
     return (
         <div className="container">
@@ -51,8 +46,7 @@ const Timer = () => {
                 <p className="title title--margin-top">Timer</p>
                 <span className="time">{formatTime(seconds)}</span>
                 <div className="button-box">
-                    <button className="buttons buttons--stop" onClick={stop}></button>
-                    <button className="buttons buttons--start" onClick={start}></button>
+                    <button className="buttons buttons--start-stop" onClick={changeTimerOn}>{timerToggle}</button>
                 </div>
             </div>
         </div>

@@ -25,33 +25,17 @@
   cursor: pointer;
 }
 
-.buttons--start {
+.buttons--start-stop {
   background: #9ed6b7;
 }
 
-.buttons--start:before {
-  content: '\25BA';
+.buttons--start-stop:before {
   color: #007d11;
   font-size: 48px;
 }
 
-.buttons--start:hover {
+.buttons--start-stop:hover {
   background: #42c57d;
-  cursor: pointer;
-}
-
-.buttons--stop {
-  background: #f1a79a;
-}
-
-.buttons--stop:before {
-  color: #c60000;
-  content: '\25A0';
-  font-size: 48px;
-}
-
-.buttons--stop:hover {
-  background: #f56248;
   cursor: pointer;
 }
 
