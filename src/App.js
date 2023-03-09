@@ -1,58 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import i18next from 'i18next';
 import './App.css';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-const Timer = () => {
-    const [count, setCount] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [timerOn, setTimerOn] = useState(false);
+const lngs = {
+    en: { nativeName: 'English'},
+    pl: { nativeName: 'Polski'}
+};
 
-    useEffect(() => {
-        let interval;
-        if (timerOn) {
-            interval = setInterval(() => {
-                setSeconds(seconds + 1)
-            }, 1000);
-        } else if (!timerOn) {
-            clearInterval(interval)
+i18next
+    .use(initReactI18next)
+    .use(LanguageDetector)
+    .init({
+        debug: true,
+        fallbackLng: 'en',
+        lng: 'en',
+        resources: {
+            en: {
+                translation: {
+                    invoice: 'invoice'
+                }
+            },
+            pl: {
+                translation: {
+                    invoice: 'faktura'
+                }
+            }
         }
-        return () => clearInterval(interval);
-    }, [timerOn, seconds]
-    );
 
-    const formatTime = (totalSeconds) => {
-        let totalMinutes = Math.floor(totalSeconds / 60);
-        let hours = Math.floor(totalMinutes / 60);
-        let minutes = totalMinutes % 60;
-        let sec = totalSeconds % 60;
+    });
 
-        return `${hours < 10 ? '0' + hours : hours} : ${minutes < 10 ? '0' + minutes : minutes} : ${sec < 10 ? '0' + sec : sec}`
-    }
-
-    const timerToggle = timerOn ? "Stop" : "Start"
-
-    const changeTimerOn = () => {
-        setTimerOn(!timerOn);
-      };
-
-    const handleClick = () => { setCount(state => state + 1) }
+const App = () => {
+    const { t, i18n } = useTranslation()
 
     return (
-        <div className="container">
-            <div className="timer">
-            <h1 className="header">Timer App</h1>
-            <button className="buttons buttons--click" onClick={handleClick}>
-                    Click me
-                </button>
-                <p className="title">You clicked <span className="count">{count}</span> times</p>
-                
-                <p className="title title--margin-top">Timer</p>
-                <span className="time">{formatTime(seconds)}</span>
-                <div className="button-box">
-                    <button className="buttons buttons--start-stop" onClick={changeTimerOn}>{timerToggle}</button>
+        <nav>
+            <ul>
+                <li><a href="#">{t('invoice')}</a></li>
+                <li><a href="#">Add new invoice</a></li>
+                <div>
+                    {Object.keys(lngs).map((lng) => (
+                        <button type="submit" key={lng} onClick={() => i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}>{lngs[lng.nativeName]}</button>
+                    ))}
                 </div>
-            </div>
-        </div>
+                <button onClick={() => i18n.changeLanguage('pl')}>pl</button>
+                <button onClick={() => i18n.changeLanguage('en')}>en</button>
+            </ul>
+        </nav>
     );
-}
+};
 
-export default Timer;
+export default App;
