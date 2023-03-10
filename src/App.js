@@ -55,7 +55,7 @@ const App = () => {
                 onClick={() => i18n.changeLanguage(lng)}
                 disabled={i18n.resolvedLanguage === lng}
               >
-                {lngs[lng.nativeName]}
+                {lngs[lng].nativeName}
               </button>
             ))}
           </div>
