@@ -59,8 +59,6 @@ const App = () => {
               </button>
             ))}
           </div>
-          <button onClick={() => i18n.changeLanguage("pl")}>pl</button>
-          <button onClick={() => i18n.changeLanguage("en")}>en</button>
         </ul>
       </nav>
 
