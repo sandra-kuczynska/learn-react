@@ -19,12 +19,12 @@ i18next
     resources: {
       en: {
         translation: {
-          invoice: "invoice",
+          invoices: "INVOICES",
         },
       },
       pl: {
         translation: {
-          invoice: "faktura",
+          invoices: "FAKTURY",
         },
       },
     },
@@ -39,12 +39,12 @@ const App = () => {
         <ul>
           <li>
             <a class="link" href="#">
-              {t("invoice")}
+              {t("invoices")}
             </a>
           </li>
           <li>
             <a class="link" href="#">
-              Add new invoice
+              ADD NEW INVOICE
             </a>
           </li>
           <div>
