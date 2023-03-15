@@ -44,6 +44,11 @@ const App = () => {
           </li>
           <li>
             <a class="link" href="#">
+              EDIT AN INVOICE
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#">
               ADD NEW INVOICE
             </a>
           </li>
