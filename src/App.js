@@ -4,6 +4,26 @@ import "normalize.css";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+
+function createData(no, created, validUntil, amount, actions) {
+  return { no, created, validUntil, amount, actions };
+}
+
+const rows = [
+  createData("02/22", "02/02/2022", "02/02/2023", 830, "icons"),
+  createData("03/22", "02/02/2022", "02/02/2023", 1000, "icons"),
+  createData("04/22", "02/02/2022", "02/02/2023", 20, "icons"),
+  createData("05/22", "02/02/2022", "02/02/2023", 9000, "icons"),
+];
+
 const lngs = {
   en: { nativeName: "English" },
   pl: { nativeName: "Polski" },
@@ -67,7 +87,35 @@ const App = () => {
         </ul>
       </nav>
 
-      <section class="table">table</section>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>No.</TableCell>
+              <TableCell align="right">Created</TableCell>
+              <TableCell align="right">Valid Until</TableCell>
+              <TableCell align="right">Amount</TableCell>
+              <TableCell align="right">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.no}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.no}
+                </TableCell>
+                <TableCell align="right">{row.created}</TableCell>
+                <TableCell align="right">{row.validUntil}</TableCell>
+                <TableCell align="right">{row.amount}</TableCell>
+                <TableCell align="right">{row.actions}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };

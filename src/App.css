@@ -16,7 +16,19 @@
   text-decoration: none;
 }
 
+a {
+  padding: 5%;
+}
+
 ul {
   margin: 0;
   list-style-type: none;
+}
+
+li {
+  display: inline;
+}
+
+.table {
+  overflow-x: auto;
 }
