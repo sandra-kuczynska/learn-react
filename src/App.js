@@ -54,9 +54,9 @@ const App = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div>
+    <div class="container">
       <nav class="navbar">
-        <ul>
+        <ul class="nav-ul" id="nav-ul">
           <li>
             <a class="link" href="#">
               {t("invoices")}
