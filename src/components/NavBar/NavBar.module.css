@@ -1,9 +1,6 @@
-#root {
-  width: 100vw;
-}
-
-.table {
-  max-height: 90vh;
+.navbar {
+  max-height: 80px;
+  background-color: #3f52b5;
 }
 
 .link {
@@ -38,8 +35,4 @@ nav {
   color: white;
   font-size: 10px;
   cursor: pointer;
-}
-
-.table {
-  overflow-x: auto;
 }
