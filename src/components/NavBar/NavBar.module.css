@@ -5,10 +5,13 @@
 
 nav {
   max-height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
   background-color: #3f52b5;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .nav-ul {
