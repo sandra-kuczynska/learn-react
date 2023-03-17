@@ -1,14 +1,11 @@
-.navbar {
-  max-height: 80px;
-  background-color: #3f52b5;
-}
-
 .link {
   color: white;
   text-decoration: none;
 }
 
 nav {
+  max-height: 80px;
+  background-color: #3f52b5;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,12 +24,4 @@ nav {
   display: inline-block;
   padding: 3px 20px;
   text-decoration: none;
-}
-
-.hamburger {
-  background-color: transparent;
-  border: 0;
-  color: white;
-  font-size: 10px;
-  cursor: pointer;
 }
