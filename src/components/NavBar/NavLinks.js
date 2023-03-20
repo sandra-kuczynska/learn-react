@@ -32,7 +32,7 @@ const NavLinks = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <ul class="nav-ul" id="nav-ul">
+    <ul>
       <li>
         <a href="#">{t("invoices")}</a>
       </li>
