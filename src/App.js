@@ -12,15 +12,18 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(no, created, validUntil, amount, actions) {
-  return { no, created, validUntil, amount, actions };
+import { IoMdTrash } from "react-icons/io";
+import { RiPencilFill } from "react-icons/ri";
+
+function createData(no, created, validUntil, amount) {
+  return { no, created, validUntil, amount };
 }
 
 const rows = [
-  createData("02/22", "02/02/2022", "02/02/2023", 830, "icons"),
-  createData("03/22", "02/02/2022", "02/02/2023", 1000, "icons"),
-  createData("04/22", "02/02/2022", "02/02/2023", 20, "icons"),
-  createData("05/22", "02/02/2022", "02/02/2023", 9000, "icons"),
+  createData("02/22", "02/02/2022", "02/02/2023", 830),
+  createData("03/22", "02/02/2022", "02/02/2023", 1000),
+  createData("04/22", "02/02/2022", "02/02/2023", 20),
+  createData("05/22", "02/02/2022", "02/02/2023", 9000),
 ];
 
 const App = () => {
@@ -50,7 +53,11 @@ const App = () => {
                 <TableCell align="right">{row.created}</TableCell>
                 <TableCell align="right">{row.validUntil}</TableCell>
                 <TableCell align="right">{row.amount}</TableCell>
-                <TableCell align="right">{row.actions}</TableCell>
+                <TableCell align="right">
+                  {" "}
+                  <RiPencilFill />
+                  <IoMdTrash />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
