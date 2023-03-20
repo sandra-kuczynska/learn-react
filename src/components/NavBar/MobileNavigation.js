@@ -1,9 +1,9 @@
 import NavLinks from "./NavLinks";
-import "./NavBar.module.css";
+import styles from "./NavBar.module.css";
 
 const MobileNavigation = () => {
   return (
-    <nav className="MobileNavigation">
+    <nav className={styles.MobileNavigation}>
       <NavLinks />
     </nav>
   );

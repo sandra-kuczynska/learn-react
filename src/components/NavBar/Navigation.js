@@ -1,9 +1,9 @@
 import NavLinks from "./NavLinks";
-import "./NavBar.module.css";
+import styles from "./NavBar.module.css";
 
 const Navigation = () => {
   return (
-    <nav className="Navigation">
+    <nav className={styles.Navigation}>
       <NavLinks />
     </nav>
   );
