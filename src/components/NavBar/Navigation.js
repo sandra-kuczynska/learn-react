@@ -3,7 +3,7 @@ import "./NavBar.module.css";
 
 const Navigation = () => {
   return (
-    <nav class="Navigation">
+    <nav className="Navigation">
       <NavLinks />
     </nav>
   );

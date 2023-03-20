@@ -3,7 +3,7 @@ import "./NavBar.module.css";
 
 const MobileNavigation = () => {
   return (
-    <nav class="MobileNavigation">
+    <nav className="MobileNavigation">
       <NavLinks />
     </nav>
   );
