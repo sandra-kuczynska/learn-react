@@ -41,7 +41,6 @@
   }
 
   .NavBar .MobileNavigation .Hamburger {
-    position: absolute;
     right: 5%;
     cursor: pointer;
     padding: 10px;
@@ -53,5 +52,6 @@
     top: 80px;
     left: 0px;
     width: 100%;
+    height: fit-content;
   }
 }
