@@ -10,6 +10,7 @@ const MobileNavigation = () => {
     <FiMenu
       className={styles.Hamburger}
       size="20px"
+      color="white"
       onClick={() => setOpen(!open)}
     />
   );
@@ -18,6 +19,7 @@ const MobileNavigation = () => {
     <IoMdClose
       className={styles.Hamburger}
       size="20px"
+      color="white"
       onClick={() => setOpen(!open)}
     />
   );
