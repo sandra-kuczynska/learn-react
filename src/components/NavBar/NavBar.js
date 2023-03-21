@@ -1,10 +1,10 @@
-// import "./NavBar.module.css";
+import styles from "./NavBar.module.css";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
 
 const NavBar = () => {
   return (
-    <div className="Navbar">
+    <div className={styles.NavBar}>
       <MobileNavigation />
       <Navigation />
     </div>

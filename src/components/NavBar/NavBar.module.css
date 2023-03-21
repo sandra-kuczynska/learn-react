@@ -2,7 +2,7 @@
   display: none;
 }
 
-.Navigation {
+.NavBar {
   max-height: 80px;
   width: 100%;
   position: fixed;
@@ -13,7 +13,7 @@
   justify-content: flex-start;
 }
 
-ul {
+.NavBar nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,14 +21,18 @@ ul {
   list-style-type: none;
 }
 
-a {
+.NavBar nav ul li {
+  display: inline-block;
+}
+
+.NavBar nav ul li a {
   color: white;
   display: inline-block;
   padding: 2px 10px;
   text-decoration: none;
 }
 
-a:hover {
+.NavBar nav ul li a:hover {
   border-bottom: 2px solid;
 }
 
@@ -37,18 +41,15 @@ a:hover {
     display: none;
   }
 
-  .MobileNavigation {
-    max-height: 80px;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    background-color: #3f52b5;
+  .NavBar .MobileNavigation {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    background-color: #3f52b5;
+    flex-direction: column;
+    cursor: pointer;
+    right: 5%;
   }
 
-  .Hamburger {
+  .NavBar .MobileNavigation .Hamburger {
     position: absolute;
     right: 5%;
     cursor: pointer;
