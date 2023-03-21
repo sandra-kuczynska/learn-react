@@ -3,7 +3,6 @@
 }
 
 .NavBar {
-  max-height: 80px;
   width: 100%;
   background: #3f52b5;
   display: flex;
@@ -53,5 +52,6 @@
     left: 0px;
     width: 100%;
     height: fit-content;
+    /* padding-top: 25px; */
   }
 }
