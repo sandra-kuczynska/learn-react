@@ -5,9 +5,7 @@
 .NavBar {
   max-height: 80px;
   width: 100%;
-  position: fixed;
-  z-index: 10;
-  background-color: #3f52b5;
+  background: #3f52b5;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -19,10 +17,6 @@
   justify-content: center;
   padding: 0;
   list-style-type: none;
-}
-
-.NavBar nav ul li {
-  display: inline-block;
 }
 
 .NavBar nav ul li a {
@@ -37,16 +31,13 @@
 }
 
 @media (max-width: 990px) {
-  .Navigation {
+  .NavBar .Navigation {
     display: none;
   }
 
   .NavBar .MobileNavigation {
     display: flex;
-    background-color: #3f52b5;
-    flex-direction: column;
-    cursor: pointer;
-    right: 5%;
+    align-items: center;
   }
 
   .NavBar .MobileNavigation .Hamburger {
@@ -54,5 +45,13 @@
     right: 5%;
     cursor: pointer;
     padding: 10px;
+  }
+
+  .NavBar nav ul {
+    display: flex;
+    flex-direction: column;
+    top: 80px;
+    left: 0px;
+    width: 100%;
   }
 }
