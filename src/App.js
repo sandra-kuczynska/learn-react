@@ -28,7 +28,7 @@ const rows = [
 
 const App = () => {
   return (
-    <div class="container">
+    <div className="container">
       <NavBar />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -38,7 +38,20 @@ a:hover {
   }
 
   .MobileNavigation {
+    max-height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: #3f52b5;
     display: flex;
-    background: red;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .Hamburger {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    padding: 10px;
   }
 }
