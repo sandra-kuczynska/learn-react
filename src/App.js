@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/" element={<TableInvoices />} />
         <Route path="/invoices/add" element={<Invoice />} />
 
-        {/* 404 rounte */}
+        {/* 404 route */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
