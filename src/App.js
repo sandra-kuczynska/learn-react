@@ -1,5 +1,4 @@
 import "./App.css";
-import "normalize.css";
 
 import NavBar from "./components/NavBar/NavBar";
 import TableInvoices from "./components/TableInvoices/TableInvoices.js";
