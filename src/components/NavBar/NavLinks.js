@@ -1,6 +1,7 @@
 import i18next from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import { Link } from "react-router-dom";
 
 const lngs = {
   en: { nativeName: "English" },
@@ -34,13 +35,13 @@ const NavLinks = () => {
   return (
     <ul>
       <li>
-        <a href="#">{t("invoices")}</a>
+        <Link to="#">{t("invoices")}</Link>
       </li>
       <li>
-        <a href="#">EDIT AN INVOICE</a>
+        <Link to="#">EDIT AN INVOICE</Link>
       </li>
       <li>
-        <a href="#">ADD NEW INVOICE</a>
+        <Link to="#">ADD NEW INVOICE</Link>
       </li>
       <div>
         {Object.keys(lngs).map((lng) => (
