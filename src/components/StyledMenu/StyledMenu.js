@@ -5,9 +5,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import EditIcon from "@mui/icons-material/Edit";
 import Divider from "@mui/material/Divider";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import AddIcon from "@mui/icons-material/Add";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const StyledMenu = styled((props) => (
@@ -87,16 +86,16 @@ export default function CustomizedMenus() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
+          <ListAltIcon />
           INVOICES
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
+          <EditIcon />
           EDIT AN INVOICE
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
         <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
+          <AddIcon />
           ADD NEW INVOICE
         </MenuItem>
       </StyledMenu>
