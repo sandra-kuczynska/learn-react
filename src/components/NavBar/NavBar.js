@@ -5,8 +5,8 @@ import MobileNavigation from "./MobileNavigation";
 const NavBar = () => {
   return (
     <div className={styles.NavBar}>
-      <MobileNavigation />
       <Navigation />
+      <MobileNavigation />
     </div>
   );
 };

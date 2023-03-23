@@ -75,7 +75,7 @@ export default function CustomizedMenus() {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        Options
+        Menu
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -88,20 +88,16 @@ export default function CustomizedMenus() {
       >
         <MenuItem onClick={handleClose} disableRipple>
           <EditIcon />
-          Edit
+          INVOICES
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <FileCopyIcon />
-          Duplicate
+          EDIT AN INVOICE
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
         <MenuItem onClick={handleClose} disableRipple>
           <ArchiveIcon />
-          Archive
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <MoreHorizIcon />
-          More
+          ADD NEW INVOICE
         </MenuItem>
       </StyledMenu>
     </div>

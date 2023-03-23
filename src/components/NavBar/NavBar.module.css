@@ -33,24 +33,4 @@
   .NavBar .Navigation {
     display: none;
   }
-
-  .NavBar .MobileNavigation {
-    display: flex;
-    align-items: center;
-  }
-
-  .NavBar .MobileNavigation .Hamburger {
-    right: 5%;
-    cursor: pointer;
-    padding: 15px;
-  }
-
-  .NavBar nav ul {
-    display: flex;
-    flex-direction: column;
-    top: 80px;
-    left: 0px;
-    width: 100%;
-    height: fit-content;
-  }
 }
