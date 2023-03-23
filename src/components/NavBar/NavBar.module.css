@@ -33,4 +33,9 @@
   .NavBar .Navigation {
     display: none;
   }
+
+  .MobileNavigation {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
