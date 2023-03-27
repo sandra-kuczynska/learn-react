@@ -12,7 +12,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<TableInvoices />} />
-        <Route path="/invoices/add" element={<Invoice />} />
+        <Route path="invoices/add" element={<Invoice />} />
 
         {/* 404 route */}
         <Route path="*" element={<NotFoundPage />} />

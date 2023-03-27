@@ -41,7 +41,7 @@ const NavLinks = () => {
         <Link to="#">EDIT AN INVOICE</Link>
       </li>
       <li>
-        <Link to="#">ADD NEW INVOICE</Link>
+        <Link to="invoices/add">ADD NEW INVOICE</Link>
       </li>
       <div>
         {Object.keys(lngs).map((lng) => (
