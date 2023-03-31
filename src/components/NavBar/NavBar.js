@@ -1,5 +1,5 @@
 import styles from "./NavBar.module.css";
-import Navigation from "./Navigation";
+import Navigation from "./DesktopNavigation";
 import MobileNavigation from "./MobileNavigation";
 
 const NavBar = () => {
