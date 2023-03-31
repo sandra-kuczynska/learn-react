@@ -1,7 +1,7 @@
 import NavLinks from "./NavLinks";
 import styles from "./NavBar.module.css";
 
-const Navigation = () => {
+const DesktopNavigation = () => {
   return (
     <nav className={styles.Navigation}>
       <NavLinks />
@@ -9,4 +9,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default DesktopNavigation;
