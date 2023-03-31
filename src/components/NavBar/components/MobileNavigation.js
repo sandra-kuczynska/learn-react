@@ -1,3 +1,5 @@
+import styles from "./Navigation.module.css";
+
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -52,7 +54,7 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-export default function CustomizedMenus() {
+const CustomizedMenus = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -101,4 +103,14 @@ export default function CustomizedMenus() {
       </StyledMenu>
     </div>
   );
-}
+};
+
+const MobileNavigation = () => {
+  return (
+    <div className={styles.MobileNavigation}>
+      <CustomizedMenus />
+    </div>
+  );
+};
+
+export default MobileNavigation;
