@@ -35,7 +35,7 @@ const NavLinks = () => {
   return (
     <ul>
       <li>
-        <Link to="#">{t("invoices")}</Link>
+        <Link to="">{t("invoices")}</Link>
       </li>
       <li>
         <Link to="#">EDIT AN INVOICE</Link>
