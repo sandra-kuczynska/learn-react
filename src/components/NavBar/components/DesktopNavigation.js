@@ -1,7 +1,5 @@
 import styles from "./Navigation.module.css";
-import i18next from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { routingConfig } from "../../../App";
 
@@ -9,27 +7,6 @@ const lngs = {
   en: { nativeName: "English" },
   pl: { nativeName: "Polski" },
 };
-
-i18next
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .init({
-    debug: true,
-    fallbackLng: "en",
-    lng: "en",
-    resources: {
-      en: {
-        translation: {
-          invoices: "INVOICES",
-        },
-      },
-      pl: {
-        translation: {
-          invoices: "FAKTURY",
-        },
-      },
-    },
-  });
 
 const buttonName = (t, routeName) => {
   if (routeName === "main") {
