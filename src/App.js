@@ -28,20 +28,9 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route
-          path={routingConfig.main.path}
-          element={routingConfig.main.element}
-        />
-        <Route
-          path={routingConfig.invoices.path}
-          element={routingConfig.invoices.element}
-        />
-
-        {/* 404 route */}
-        <Route
-          path={routingConfig.notFound.path}
-          element={routingConfig.notFound.element}
-        />
+        {Object.values(routingConfig).map((route) => (
+          <Route path={route.path} element={route.element} />
+        ))}
       </Routes>
     </>
   );
