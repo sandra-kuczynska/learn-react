@@ -13,13 +13,14 @@ export const routingConfig = {
     isInMyMenu: true,
   },
   invoices: {
-    path: "/invoices/add",
+    path: "/invoices",
     element: <Invoice />,
     isInMyMenu: true,
   },
   notFound: {
     path: "*",
     element: <NotFoundPage />,
+    isInMyMenu: false,
   },
 };
 

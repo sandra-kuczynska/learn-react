@@ -3,6 +3,7 @@ import i18next from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { Link } from "react-router-dom";
+import routingConfig from "../../../App";
 
 const lngs = {
   en: { nativeName: "English" },
@@ -36,15 +37,11 @@ const DesktopNavigation = () => {
   return (
     <nav className={styles.DesktopNavigation}>
       <ul>
-        <li>
-          <Link to="">{t("invoices")}</Link>
-        </li>
-        <li>
-          <Link to="#">EDIT AN INVOICE</Link>
-        </li>
-        <li>
-          <Link to="invoices/add">ADD NEW INVOICE</Link>
-        </li>
+        {Object.values(routingConfig).map((route) => (
+          <li>
+            <Link to={route.path}>Add invoice</Link>
+          </li>
+        ))}
         <div>
           {Object.keys(lngs).map((lng) => (
             <button
