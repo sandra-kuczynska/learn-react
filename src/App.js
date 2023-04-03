@@ -17,11 +17,6 @@ export const routingConfig = {
     element: <Invoice />,
     isInMyMenu: true,
   },
-  notFound: {
-    path: "*",
-    element: <NotFoundPage />,
-    isInMyMenu: false,
-  },
 };
 
 const App = () => {
@@ -32,6 +27,7 @@ const App = () => {
         {Object.values(routingConfig).map((route) => (
           <Route path={route.path} element={route.element} />
         ))}
+        <Route path="*" element={NotFoundPage}></Route>
       </Routes>
     </>
   );
