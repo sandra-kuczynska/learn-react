@@ -6,32 +6,41 @@
     "info info"
     "add-item add-item";
   grid-template-columns: 1fr 1fr;
-  column-gap: 16px;
-  row-gap: 16px;
+  column-gap: 0px;
+  row-gap: 0px;
 }
 
 .noDates {
+  display: grid;
   background: pink;
-  grid-column-start: 1/2;
+  grid-area: no-dates;
+}
+
+.grid__input-no {
+  width: 100%;
 }
 
 .saveCancel {
+  background: rgb(255, 116, 139);
   grid-area: save-cancel;
 }
 
 .recipient {
+  background: rgb(198, 245, 229);
   grid-area: recipient;
 }
 
 .sender {
+  background: rgb(143, 249, 214);
   grid-area: sender;
 }
 
 .info {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  background: rgb(204, 209, 52);
+  grid-area: info;
 }
 
 .addItem {
-  grid-area: addItem;
+  background: rgb(144, 255, 34);
+  grid-area: add-item;
 }
