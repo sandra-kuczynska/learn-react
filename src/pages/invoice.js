@@ -35,7 +35,7 @@ const Invoice = () => {
 
           <label>Valid until date</label>
           <input
-            className="grid grid__date-from"
+            className="grid grid__date-to"
             defaultValue="20/10/2023"
             {...register("date-from", { required: true })}
           />
