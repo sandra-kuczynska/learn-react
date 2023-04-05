@@ -7,7 +7,7 @@
     "add-item add-item";
   grid-template-columns: 1fr 1fr;
   column-gap: 0px;
-  row-gap: 0px;
+  gap: 10px;
 }
 
 .noDates {
@@ -16,8 +16,28 @@
   grid-area: no-dates;
 }
 
-.grid__input-no {
+.wrapperNoDates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "no no"
+    "from to";
+}
+
+.no {
+  background-color: rgb(187, 163, 3);
+  grid-area: no;
   width: 100%;
+}
+
+.from {
+  background-color: blueviolet;
+  grid-area: from;
+}
+
+.to {
+  background-color: aqua;
+  grid-area: to;
 }
 
 .saveCancel {

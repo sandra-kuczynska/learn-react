@@ -15,32 +15,35 @@ const Invoice = () => {
   return (
     <div className={styles.grid}>
       <div className={styles.noDates}>
-        <form className="grid__NoAndDates" onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <label>No.</label>
-            <input
-              className="grid__input-no"
-              defaultValue="20/04/23"
-              {...register("inputNo", { required: true })}
-            />
-          </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.wrapperNoDates}>
+            <div className={styles.no}>
+              <label>No.</label>
+              <br />
+              <input
+                defaultValue="20/04/23"
+                {...register("no", { required: true })}
+              />
+            </div>
 
-          <div>
-            <label>Created date</label>
-            <input
-              className="grid__date-from"
-              defaultValue="20/04/2023"
-              {...register("date-from", { required: true })}
-            />
+            <div className={styles.from}>
+              <label>Created date</label>
+              <br />
+              <input
+                defaultValue="20/04/2023"
+                {...register("from", { required: true })}
+              />
+            </div>
+            <div className={styles.to}>
+              <label>Valid until date</label>
+              <br />
+              <input
+                defaultValue="20/10/2023"
+                {...register("to", { required: true })}
+              />
+            </div>
 
-            <label>Valid until date</label>
-            <input
-              className="grid__date-to"
-              defaultValue="20/10/2023"
-              {...register("date-from", { required: true })}
-            />
-
-            {errors.inputNo && <span>This field is required</span>}
+            {errors.no && <span>This field is required</span>}
           </div>
         </form>
       </div>
