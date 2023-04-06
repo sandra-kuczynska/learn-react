@@ -51,6 +51,11 @@
   padding: 10px;
 }
 
+.wrapperSaveCancel {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .recipient {
   background: rgb(198, 245, 229);
   grid-area: recipient;

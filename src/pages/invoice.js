@@ -55,22 +55,35 @@ const Invoice = () => {
       </div>
 
       <div className={styles.saveCancel}>
-        <Stack direction="row" spacing={2}>
-          <Button
-            style={{
-              backgroundColor: "#e0e0e0",
-              color: "black",
-              maxWidth: "30px",
-              maxHeight: "30px",
-            }}
-            variant="contained"
-          >
-            Cancel
-          </Button>
-          <Button variant="contained" disabled>
-            Save
-          </Button>
-        </Stack>
+        <div className={styles.wrapperSaveCancel}>
+          <Stack direction="row" spacing={2}>
+            <Button
+              style={{
+                backgroundColor: "#e0e0e0",
+                color: "black",
+                maxWidth: "30px",
+                maxHeight: "30px",
+                fontSize: "10px",
+              }}
+              variant="contained"
+            >
+              Cancel
+            </Button>
+            <Button
+              style={{
+                backgroundColor: "#d1d1d1",
+                color: "#9b9b9b",
+                maxWidth: "30px",
+                maxHeight: "30px",
+                fontSize: "10px",
+              }}
+              variant="contained"
+              disabled
+            >
+              Save
+            </Button>
+          </Stack>
+        </div>
       </div>
       <div className={styles.recipient}>recipient</div>
       <div className={styles.sender}>sender</div>
