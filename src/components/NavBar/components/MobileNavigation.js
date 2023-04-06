@@ -67,6 +67,10 @@ const CustomizedMenus = () => {
   return (
     <div>
       <Button
+        style={{
+          backgroundColor: "#3f52b5",
+          padding: "15px 33px",
+        }}
         id="demo-customized-button"
         aria-controls={open ? "demo-customized-menu" : undefined}
         aria-haspopup="true"

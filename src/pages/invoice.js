@@ -58,7 +58,10 @@ const Invoice = () => {
         <Stack direction="row" spacing={2}>
           <Button
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "#e0e0e0",
+              color: "black",
+              maxWidth: "30px",
+              maxHeight: "30px",
             }}
             variant="contained"
           >
