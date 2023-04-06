@@ -18,9 +18,12 @@ const Invoice = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.wrapperNoDates}>
             <div className={styles.no}>
-              <label>No.</label>
+              <div className={styles.label}>
+                <label>No.</label>
+              </div>
               <br />
               <input
+                className={styles.inputLong}
                 defaultValue="20/04/23"
                 {...register("no", { required: true })}
               />

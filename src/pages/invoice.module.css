@@ -12,8 +12,10 @@
 
 .noDates {
   display: grid;
-  background: pink;
+  background: #eeeeee;
   grid-area: no-dates;
+  font-size: 10px;
+  padding: 20px;
 }
 
 .wrapperNoDates {
@@ -24,20 +26,23 @@
     "from to";
 }
 
-.no {
-  background-color: rgb(187, 163, 3);
-  grid-area: no;
+.inputLong {
   width: 100%;
 }
 
+.no {
+  grid-area: no;
+  padding: 10px;
+}
+
 .from {
-  background-color: blueviolet;
   grid-area: from;
+  padding: 10px;
 }
 
 .to {
-  background-color: aqua;
   grid-area: to;
+  padding: 10px;
 }
 
 .saveCancel {
