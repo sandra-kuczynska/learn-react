@@ -1,5 +1,8 @@
 import styles from "./invoice.module.css";
 import { useForm } from "react-hook-form";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 
 const Invoice = () => {
   const {
@@ -52,8 +55,19 @@ const Invoice = () => {
       </div>
 
       <div className={styles.saveCancel}>
-        Cancel
-        <input type="submit" value="Save" />
+        <Stack direction="row" spacing={2}>
+          <Button
+            style={{
+              backgroundColor: "gray",
+            }}
+            variant="contained"
+          >
+            Cancel
+          </Button>
+          <Button variant="contained" disabled>
+            Save
+          </Button>
+        </Stack>
       </div>
       <div className={styles.recipient}>recipient</div>
       <div className={styles.sender}>sender</div>

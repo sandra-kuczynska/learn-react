@@ -46,8 +46,9 @@
 }
 
 .saveCancel {
-  background: rgb(255, 116, 139);
+  background: #eeeeee;
   grid-area: save-cancel;
+  padding: 10px;
 }
 
 .recipient {
