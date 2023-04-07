@@ -4,6 +4,8 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
+const userData = [];
+
 const Invoice = () => {
   const {
     register,
@@ -11,14 +13,17 @@ const Invoice = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    userData.push(data);
+    console.log(userData);
+  };
 
   console.log(watch());
 
   return (
-    <div className={styles.grid}>
-      <div className={styles.noDates}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.grid}>
+        <div className={styles.noDates}>
           <div className={styles.wrapperNoDates}>
             <div className={styles.no}>
               <div className={styles.label}>
@@ -51,45 +56,26 @@ const Invoice = () => {
 
             {errors.no && <span>This field is required</span>}
           </div>
-        </form>
-      </div>
-
-      <div className={styles.saveCancel}>
-        <div className={styles.wrapperSaveCancel}>
-          <Stack direction="row" spacing={2}>
-            <Button
-              style={{
-                backgroundColor: "#e0e0e0",
-                color: "black",
-                maxWidth: "30px",
-                maxHeight: "30px",
-                fontSize: "10px",
-              }}
-              variant="contained"
-            >
-              Cancel
-            </Button>
-            <Button
-              style={{
-                backgroundColor: "#d1d1d1",
-                color: "#9b9b9b",
-                maxWidth: "30px",
-                maxHeight: "30px",
-                fontSize: "10px",
-              }}
-              variant="contained"
-              disabled
-            >
-              Save
-            </Button>
-          </Stack>
         </div>
+
+        <div className={styles.saveCancel}>
+          <div className={styles.wrapperSaveCancel}>
+            <Stack direction="row" spacing={2}>
+              <button className={styles.buttonCancel}>Cancel</button>
+              <input className={styles.inputSave} value="Save" type="submit" />
+            </Stack>
+          </div>
+        </div>
+
+        <div className={styles.recipient}>
+          <p className={styles.paragraph}>Recipient</p>
+        </div>
+        <div className={styles.sender}>Sender</div>
+
+        <div className={styles.info}>info</div>
+        <div className={styles.addItem}>add</div>
       </div>
-      <div className={styles.recipient}>recipient</div>
-      <div className={styles.sender}>sender</div>
-      <div className={styles.info}>info</div>
-      <div className={styles.addItem}>add</div>
-    </div>
+    </form>
   );
 };
 
