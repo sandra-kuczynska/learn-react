@@ -41,6 +41,7 @@ const Invoice = () => {
               <label>Created date</label>
               <br />
               <input
+                className={styles.inputRegular}
                 defaultValue="20/04/2023"
                 {...register("from", { required: true })}
               />
@@ -49,6 +50,7 @@ const Invoice = () => {
               <label>Valid until date</label>
               <br />
               <input
+                className={styles.inputRegular}
                 defaultValue="20/10/2023"
                 {...register("to", { required: true })}
               />
