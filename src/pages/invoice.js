@@ -1,8 +1,8 @@
 import styles from "./invoice.module.css";
 import { useForm } from "react-hook-form";
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import NoDates from "./components/NoDates";
 
 const userData = [];
 
@@ -23,42 +23,7 @@ const Invoice = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.grid}>
-        <div className={styles.noDates}>
-          <div className={styles.wrapperNoDates}>
-            <div className={styles.no}>
-              <div className={styles.label}>
-                <label>No.</label>
-              </div>
-              <br />
-              <input
-                className={styles.inputRegular}
-                defaultValue="20/04/23"
-                {...register("no", { required: true })}
-              />
-            </div>
-
-            <div className={styles.from}>
-              <label>Created date</label>
-              <br />
-              <input
-                className={styles.inputRegular}
-                defaultValue="20/04/2023"
-                {...register("from", { required: true })}
-              />
-            </div>
-            <div className={styles.to}>
-              <label>Valid until date</label>
-              <br />
-              <input
-                className={styles.inputRegular}
-                defaultValue="20/10/2023"
-                {...register("to", { required: true })}
-              />
-            </div>
-
-            {errors.no && <span>This field is required</span>}
-          </div>
-        </div>
+        <NoDates register={register} errors={errors} />
 
         <div className={styles.saveCancel}>
           <div className={styles.wrapperSaveCancel}>
