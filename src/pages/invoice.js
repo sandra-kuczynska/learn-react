@@ -31,7 +31,7 @@ const Invoice = () => {
               </div>
               <br />
               <input
-                className={styles.inputLong}
+                className={styles.inputRegular}
                 defaultValue="20/04/23"
                 {...register("no", { required: true })}
               />

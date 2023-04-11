@@ -26,17 +26,6 @@
     "from to";
 }
 
-.inputLong {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid gray;
-  outline: 0;
-  font-size: 1.3rem;
-  color: black;
-  padding: 7px 0;
-  background: transparent;
-}
-
 .no {
   grid-area: no;
   padding: 10px;
