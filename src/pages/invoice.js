@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import NoDates from "./components/NoDates";
+import Recipient from "./components/Recipient";
+import Sender from "./components/Sender";
 
 const userData = [];
 
@@ -34,10 +36,8 @@ const Invoice = () => {
           </div>
         </div>
 
-        <div className={styles.recipient}>
-          <p className={styles.paragraph}>Recipient</p>
-        </div>
-        <div className={styles.sender}>Sender</div>
+        <Recipient register={register} errors={errors} />
+        <Sender register={register} errors={errors} />
 
         <div className={styles.info}>info</div>
         <div className={styles.addItem}>add</div>

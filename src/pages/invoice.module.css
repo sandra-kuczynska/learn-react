@@ -81,20 +81,6 @@
   flex-direction: row-reverse;
 }
 
-.recipient {
-  background: rgb(198, 245, 229);
-  grid-area: recipient;
-}
-
-.paragraph {
-  font-size: 30px;
-}
-
-.sender {
-  background: rgb(143, 249, 214);
-  grid-area: sender;
-}
-
 .info {
   background: rgb(204, 209, 52);
   grid-area: info;
