@@ -81,11 +81,6 @@
   flex-direction: row-reverse;
 }
 
-.info {
-  background: rgb(204, 209, 52);
-  grid-area: info;
-}
-
 .addItem {
   background: rgb(144, 255, 34);
   grid-area: add-item;

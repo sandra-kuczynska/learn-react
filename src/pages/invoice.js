@@ -4,6 +4,7 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import NoDates from "./components/NoDates";
 import RecipientSender from "./components/RecipientSender";
+import Items from "./components/Items";
 
 const userData = [];
 
@@ -37,7 +38,8 @@ const Invoice = () => {
 
         <RecipientSender register={register} errors={errors} />
 
-        <div className={styles.info}>info</div>
+        <Items register={register} errors={errors} />
+
         <div className={styles.addItem}>add</div>
       </div>
     </form>
