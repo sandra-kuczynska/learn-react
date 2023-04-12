@@ -1,8 +1,13 @@
-.sender {
+.recipient {
   background: #eeeeee;
   grid-area: recipient;
   padding: 20px;
+}
+
+.sender {
+  background: #eeeeee;
   grid-area: sender;
+  padding: 20px;
 }
 
 .paragraph {
