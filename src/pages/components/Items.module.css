@@ -1,8 +1,18 @@
-.info {
-  grid-area: info;
+.items {
+  grid-area: items;
   display: grid;
   background: #eeeeee;
   grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.item {
+  padding: 10px;
+}
+
+.itemTrash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputRegular {

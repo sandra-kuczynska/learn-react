@@ -3,7 +3,7 @@
   grid-template-areas:
     "no-dates save-cancel"
     "recipient sender"
-    "info info"
+    "items items"
     "add-item add-item";
   grid-template-columns: 1fr 1fr;
   column-gap: 0px;
