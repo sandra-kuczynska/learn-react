@@ -15,6 +15,7 @@ const Invoice = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     userData.push(data);
     console.log(userData);
@@ -30,7 +31,7 @@ const Invoice = () => {
         <div className={styles.saveCancel}>
           <div className={styles.wrapperSaveCancel}>
             <Stack direction="row" spacing={2}>
-              <button className={styles.buttonCancel}>Cancel</button>
+              <button className={styles.buttonRegular}>Cancel</button>
               <input className={styles.inputSave} value="Save" type="submit" />
             </Stack>
           </div>
@@ -39,8 +40,6 @@ const Invoice = () => {
         <RecipientSender register={register} errors={errors} />
 
         <Items register={register} errors={errors} />
-
-        <div className={styles.addItem}>add</div>
       </div>
     </form>
   );
