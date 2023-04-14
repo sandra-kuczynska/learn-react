@@ -11,11 +11,17 @@ const Items = ({ register, errors, props }) => {
     price: "",
   });
 
+  const itemList = [];
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputValues({ ...inputValues, [name]: value });
-    console.log(inputValues);
+  };
+
+  const btnHandler = (event) => {
+    itemList.push(inputValues);
+    console.log(itemList);
   };
 
   return (
@@ -97,7 +103,9 @@ const Items = ({ register, errors, props }) => {
       </div>
 
       <div className={styles.addItem}>
-        {/* <button onClick={ItemHandler} className={styles.buttonRegular}>ADD ITEM</button> */}
+        <button onClick={btnHandler} className={styles.buttonRegular}>
+          ADD ITEM
+        </button>
       </div>
     </>
   );

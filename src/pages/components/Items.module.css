@@ -3,6 +3,7 @@
   display: grid;
   background: #eeeeee;
   grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
 }
 
 .item {
