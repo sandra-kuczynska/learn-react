@@ -100,24 +100,24 @@ const Items = ({ register, errors, props }) => {
         <div className={styles.itemTrash}>
           <IoMdTrash />
         </div>
-      </div>
 
-      {itemList.map((row) => (
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>{row.name}</label>
+        {itemList.map((row) => (
+          <div className={styles.item}>
+            <div className={styles.smallLabel}>
+              <label>{row.name}</label>
+            </div>
+            <br />
+            <div className={styles.inputRegular}>{row.name}</div>
+            <div className={styles.inputRegular}>{row.amount}</div>
+            <div className={styles.inputRegular}>{row.unit}</div>
+            <div className={styles.inputRegular}>{row.name}</div>
+            <div className={styles.inputRegular}>{row.price}</div>
+            <div className={styles.itemTrash}>
+              <IoMdTrash />
+            </div>
           </div>
-          <br />
-          <div className={styles.inputRegular}>{row.name}</div>
-          <div className={styles.inputRegular}>{row.amount}</div>
-          <div className={styles.inputRegular}>{row.unit}</div>
-          <div className={styles.inputRegular}>{row.name}</div>
-          <div className={styles.inputRegular}>{row.price}</div>
-          <div className={styles.itemTrash}>
-            <IoMdTrash />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <div className={styles.addItem}>
         <button onClick={btnHandler} className={styles.buttonRegular}>
