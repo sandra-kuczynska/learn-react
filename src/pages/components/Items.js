@@ -2,7 +2,7 @@ import styles from "./Items.module.css";
 import { IoMdTrash } from "react-icons/io";
 import { useState } from "react";
 
-const itemList = [];
+const ITEMLIST = [];
 
 const Items = ({ register, errors, props }) => {
   const [inputValues, setInputValues] = useState({});
@@ -14,8 +14,9 @@ const Items = ({ register, errors, props }) => {
   };
 
   const btnHandler = (event) => {
-    itemList.push(inputValues);
-    console.log(itemList);
+    ITEMLIST.push(inputValues);
+    event.target.reset();
+    console.log(ITEMLIST);
   };
 
   return (
@@ -95,7 +96,7 @@ const Items = ({ register, errors, props }) => {
           <IoMdTrash />
         </div>
 
-        {itemList.map((row) => {
+        {ITEMLIST.map((row) => {
           return (
             <>
               {Object.entries(row).map(([key, value]) => {

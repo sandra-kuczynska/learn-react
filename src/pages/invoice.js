@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import NoDates from "./components/NoDates";
 import RecipientSender from "./components/RecipientSender";
 import Items from "./components/Items";
-import itemList from "./components/Items";
+import ITEMLIST from "./components/Items";
 
 const userData = [];
 
@@ -19,7 +19,7 @@ const Invoice = () => {
 
   const onSubmit = (data) => {
     userData.push(data);
-    userData.push({ items: itemList });
+    userData.push({ items: ITEMLIST });
     console.log(userData);
   };
 
