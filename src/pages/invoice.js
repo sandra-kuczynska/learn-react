@@ -14,8 +14,14 @@ const Invoice = () => {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    values: {
+      // ksztalt formularza
+      items: [""],
+    },
+  });
 
   const onSubmit = (data) => {
     userData.push(data);
@@ -41,7 +47,7 @@ const Invoice = () => {
 
         <RecipientSender register={register} errors={errors} />
 
-        <Items register={register} errors={errors} />
+        <Items register={register} errors={errors} setValue={setValue} />
       </div>
     </form>
   );

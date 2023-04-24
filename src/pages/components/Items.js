@@ -2,10 +2,17 @@ import styles from "./Items.module.css";
 import { IoMdTrash } from "react-icons/io";
 import { useState } from "react";
 
-const ITEMLIST = [];
+const initialItem = {
+  Name: "kjdfhkdf",
+  Amount: "",
+  Unit: "",
+  Tax: "",
+  Price: "",
+};
 
-const Items = ({ register, errors, props }) => {
+const Items = ({ register, errors, setValue }) => {
   const [inputValues, setInputValues] = useState({});
+  const [itemsList, setItemsList] = useState([initialItem]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -13,104 +20,39 @@ const Items = ({ register, errors, props }) => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const btnHandler = (event) => {
-    ITEMLIST.push(inputValues);
-    event.target.reset();
-    console.log(ITEMLIST);
+  const btnHandler = () => {
+    setItemsList((state) => {
+      const newState = [...state, initialItem];
+      setValue("items", newState);
+      return newState;
+    });
+    // setItemsList([...itemsList, initialItem])
+    // setValue("items", [...itemsList, initialItem])
   };
 
   return (
     <>
       <div className={styles.items}>
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>Name</label>
-          </div>
-          <br />
-          <input
-            className={styles.inputRegular}
-            name="Name"
-            type="text"
-            onChange={handleChange}
-            // {...register("nameItem", { required: true })}
-          />
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>Amount</label>
-          </div>
-          <br />
-          <input
-            name="Amount"
-            className={styles.inputRegular}
-            type="number"
-            onChange={handleChange}
-            // {...register("amount", { required: true })}
-          />
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>Unit</label>
-          </div>
-          <br />
-          <input
-            name="Unit"
-            className={styles.inputRegular}
-            type="number"
-            onChange={handleChange}
-            // {...register("unit", { required: true })}
-          />
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>Tax</label>
-          </div>
-          <br />
-          <input
-            name="tax"
-            className={styles.inputRegular}
-            type="Number"
-            onChange={handleChange}
-            // {...register("tax", { required: true })}
-          />
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.smallLabel}>
-            <label>Price</label>
-          </div>
-          <br />
-          <input
-            name="Price"
-            className={styles.inputRegular}
-            type="number"
-            onChange={handleChange}
-            // {...register("price", { required: true })}
-          />
-        </div>
-
-        <div className={styles.itemTrash}>
-          <IoMdTrash />
-        </div>
-
-        {ITEMLIST.map((row) => {
+        {itemsList.map((row, itemIndex) => {
           return (
+            // import fragment
             <>
-              {Object.entries(row).map(([key, value]) => {
+              {Object.entries(row).map(([key, value], index) => {
                 console.log(key, value);
                 return (
-                  <>
-                    <div className={styles.item}>
-                      <div className={styles.smallLabel}>
-                        <label>{key}</label>
-                      </div>
-                      <br />
-                      <div className={styles.inputRegular}>{value}</div>
+                  <div className={styles.item} key={index}>
+                    <div className={styles.smallLabel}>
+                      <label>{key}</label>
                     </div>
-                  </>
+                    <br />
+                    {/* +state */}
+                    <input
+                      {...register(`items[${itemIndex}].[${key}]`, {
+                        required: true,
+                      })}
+                      className={styles.inputRegular}
+                    />
+                  </div>
                 );
               })}
               <div className={styles.itemTrash}>
