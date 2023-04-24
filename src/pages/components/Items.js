@@ -5,13 +5,7 @@ import { useState } from "react";
 const itemList = [];
 
 const Items = ({ register, errors, props }) => {
-  const [inputValues, setInputValues] = useState({
-    Name: "",
-    Amount: "",
-    Unit: "",
-    Tax: "",
-    Price: "",
-  });
+  const [inputValues, setInputValues] = useState({});
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -34,7 +28,7 @@ const Items = ({ register, errors, props }) => {
           <br />
           <input
             className={styles.inputRegular}
-            name="name"
+            name="Name"
             type="text"
             onChange={handleChange}
             // {...register("nameItem", { required: true })}
@@ -47,7 +41,7 @@ const Items = ({ register, errors, props }) => {
           </div>
           <br />
           <input
-            name="amount"
+            name="Amount"
             className={styles.inputRegular}
             type="number"
             onChange={handleChange}
@@ -61,7 +55,7 @@ const Items = ({ register, errors, props }) => {
           </div>
           <br />
           <input
-            name="unit"
+            name="Unit"
             className={styles.inputRegular}
             type="number"
             onChange={handleChange}
@@ -77,7 +71,7 @@ const Items = ({ register, errors, props }) => {
           <input
             name="tax"
             className={styles.inputRegular}
-            type="number"
+            type="Number"
             onChange={handleChange}
             // {...register("tax", { required: true })}
           />
@@ -89,7 +83,7 @@ const Items = ({ register, errors, props }) => {
           </div>
           <br />
           <input
-            name="price"
+            name="Price"
             className={styles.inputRegular}
             type="number"
             onChange={handleChange}
