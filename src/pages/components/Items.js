@@ -95,16 +95,6 @@ const Items = ({ register, errors, props }) => {
           <IoMdTrash />
         </div>
 
-        {/* <>
-            <div className={styles.item}>
-              <div className={styles.smallLabel}>
-                <label>{element.key}</label>
-              </div>
-              <br />
-              <div className={styles.inputRegular}>{element.value}</div>
-              </div>
-          </>; */}
-
         {itemList.map((row) => {
           return (
             <>
