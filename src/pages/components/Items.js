@@ -6,11 +6,11 @@ const itemList = [];
 
 const Items = ({ register, errors, props }) => {
   const [inputValues, setInputValues] = useState({
-    name: "",
-    amount: "",
-    unit: "",
-    tax: "",
-    price: "",
+    Name: "",
+    Amount: "",
+    Unit: "",
+    Tax: "",
+    Price: "",
   });
 
   const handleChange = (event) => {
@@ -101,22 +101,39 @@ const Items = ({ register, errors, props }) => {
           <IoMdTrash />
         </div>
 
-        {itemList.map((row) => (
-          <div className={styles.item}>
-            <div className={styles.smallLabel}>
-              <label>{row.name}</label>
-            </div>
-            <br />
-            <div className={styles.inputRegular}>{row.name}</div>
-            <div className={styles.inputRegular}>{row.amount}</div>
-            <div className={styles.inputRegular}>{row.unit}</div>
-            <div className={styles.inputRegular}>{row.name}</div>
-            <div className={styles.inputRegular}>{row.price}</div>
-            <div className={styles.itemTrash}>
-              <IoMdTrash />
-            </div>
-          </div>
-        ))}
+        {/* <>
+            <div className={styles.item}>
+              <div className={styles.smallLabel}>
+                <label>{element.key}</label>
+              </div>
+              <br />
+              <div className={styles.inputRegular}>{element.value}</div>
+              </div>
+          </>; */}
+
+        {itemList.map((row) => {
+          return (
+            <>
+              {Object.entries(row).map(([key, value]) => {
+                console.log(key, value);
+                return (
+                  <>
+                    <div className={styles.item}>
+                      <div className={styles.smallLabel}>
+                        <label>{key}</label>
+                      </div>
+                      <br />
+                      <div className={styles.inputRegular}>{value}</div>
+                    </div>
+                  </>
+                );
+              })}
+              <div className={styles.itemTrash}>
+                <IoMdTrash />
+              </div>
+            </>
+          );
+        })}
       </div>
 
       <div className={styles.addItem}>
