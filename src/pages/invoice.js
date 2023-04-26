@@ -15,6 +15,7 @@ const Invoice = () => {
     handleSubmit,
     watch,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm({
     values: {
@@ -47,7 +48,12 @@ const Invoice = () => {
 
         <RecipientSender register={register} errors={errors} />
 
-        <Items register={register} errors={errors} setValue={setValue} />
+        <Items
+          register={register}
+          errors={errors}
+          setValue={setValue}
+          getValues={getValues}
+        />
       </div>
     </form>
   );

@@ -3,14 +3,14 @@ import { IoMdTrash } from "react-icons/io";
 import { useState } from "react";
 
 const initialItem = {
-  Name: "kjdfhkdf",
+  Name: "",
   Amount: "",
   Unit: "",
   Tax: "",
   Price: "",
 };
 
-const Items = ({ register, errors, setValue }) => {
+const Items = ({ register, errors, setValue, getValues }) => {
   const [inputValues, setInputValues] = useState({});
   const [itemsList, setItemsList] = useState([initialItem]);
 
@@ -23,11 +23,9 @@ const Items = ({ register, errors, setValue }) => {
   const btnHandler = () => {
     setItemsList((state) => {
       const newState = [...state, initialItem];
-      setValue("items", newState);
+      setValue("items", [...getValues().items, initialItem]);
       return newState;
     });
-    // setItemsList([...itemsList, initialItem])
-    // setValue("items", [...itemsList, initialItem])
   };
 
   return (
@@ -38,7 +36,6 @@ const Items = ({ register, errors, setValue }) => {
             // import fragment
             <>
               {Object.entries(row).map(([key, value], index) => {
-                console.log(key, value);
                 return (
                   <div className={styles.item} key={index}>
                     <div className={styles.smallLabel}>
