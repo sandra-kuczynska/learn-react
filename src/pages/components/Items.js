@@ -11,21 +11,19 @@ const initialItem = {
 };
 
 const Items = ({ register, errors, setValue, getValues }) => {
-  const [inputValues, setInputValues] = useState({});
   const [itemsList, setItemsList] = useState([initialItem]);
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputValues({ ...inputValues, [name]: value });
-  };
 
   const btnHandler = () => {
     setItemsList((state) => {
       const newState = [...state, initialItem];
       setValue("items", [...getValues().items, initialItem]);
+      console.log(itemsList);
       return newState;
     });
+  };
+
+  const handleRemoveItem = (e) => {
+    setItemsList(itemsList.slice(itemsList.indexOf(e.target.name, 1)));
   };
 
   return (
@@ -53,7 +51,12 @@ const Items = ({ register, errors, setValue, getValues }) => {
                 );
               })}
               <div className={styles.itemTrash}>
-                <IoMdTrash />
+                <button
+                  className={styles.buttonTrash}
+                  onClick={handleRemoveItem}
+                >
+                  <IoMdTrash />
+                </button>
               </div>
             </>
           );

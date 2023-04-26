@@ -42,6 +42,24 @@
   padding: 20px;
 }
 
+.buttonTrash {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.buttonTrash:hover {
+  background-color: #f7fafa;
+}
+
+.buttonTrash:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
+
 .buttonRegular {
   background-color: rgba(51, 51, 51, 0.05);
   border-radius: 8px;
