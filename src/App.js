@@ -1,58 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
 
-const Timer = () => {
-    const [count, setCount] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [timerOn, setTimerOn] = useState(false);
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import TableInvoices from "./pages/TableInvoices.js";
+import Invoice from "./pages/invoice.js";
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-    useEffect(() => {
-        let interval;
-        if (timerOn) {
-            interval = setInterval(() => {
-                setSeconds(seconds + 1)
-            }, 1000);
-        } else if (!timerOn) {
-            clearInterval(interval)
-        }
-        return () => clearInterval(interval);
-    }, [timerOn, seconds]
-    );
+i18next
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    debug: true,
+    fallbackLng: "en",
+    lng: "en",
+    resources: {
+      en: {
+        translation: {
+          invoices: "INVOICES",
+        },
+      },
+      pl: {
+        translation: {
+          invoices: "FAKTURY",
+        },
+      },
+    },
+  });
 
-    const formatTime = (totalSeconds) => {
-        let totalMinutes = Math.floor(totalSeconds / 60);
-        let hours = Math.floor(totalMinutes / 60);
-        let minutes = totalMinutes % 60;
-        let sec = totalSeconds % 60;
+export const routingConfig = {
+  main: {
+    path: "/",
+    element: <TableInvoices />,
+    menuButtonTranslationKey: true,
+  },
+  invoices: {
+    path: "/invoices",
+    element: <Invoice />,
+    menuButtonTranslationKey: true,
+  },
+};
 
-        return `${hours < 10 ? '0' + hours : hours} : ${minutes < 10 ? '0' + minutes : minutes} : ${sec < 10 ? '0' + sec : sec}`
-    }
+const App = () => {
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        {Object.values(routingConfig).map((route) => (
+          <Route path={route.path} element={route.element} />
+        ))}
+        <Route path="*" element={NotFoundPage}></Route>
+      </Routes>
+    </>
+  );
+};
 
-    const timerToggle = timerOn ? "Stop" : "Start"
-
-    const changeTimerOn = () => {
-        setTimerOn(!timerOn);
-      };
-
-    const handleClick = () => { setCount(state => state + 1) }
-
-    return (
-        <div className="container">
-            <div className="timer">
-            <h1 className="header">Timer App</h1>
-            <button className="buttons buttons--click" onClick={handleClick}>
-                    Click me
-                </button>
-                <p className="title">You clicked <span className="count">{count}</span> times</p>
-                
-                <p className="title title--margin-top">Timer</p>
-                <span className="time">{formatTime(seconds)}</span>
-                <div className="button-box">
-                    <button className="buttons buttons--start-stop" onClick={changeTimerOn}>{timerToggle}</button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-export default Timer;
+export default App;

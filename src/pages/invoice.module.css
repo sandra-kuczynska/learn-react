@@ -1,0 +1,82 @@
+.grid {
+  display: grid;
+  grid-template-areas:
+    "no-dates save-cancel"
+    "recipient sender"
+    "items items"
+    "add-item add-item";
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0px;
+}
+
+.saveCancel {
+  background: #eeeeee;
+  grid-area: save-cancel;
+  padding: 10px;
+}
+
+.inputSave {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  background-color: #d1d1d1;
+  color: #9b9b9b;
+  box-shadow: rgba(155, 158, 158, 0.5) 0 2px 5px 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonRegular {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: rgba(155, 158, 158, 0.5) 0 2px 5px 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonRegular:hover {
+  background-color: #f7fafa;
+}
+
+.buttonRegular:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.wrapperSaveCancel {
+  display: flex;
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,96 @@
+.items {
+  grid-area: items;
+  display: grid;
+  background: #eeeeee;
+  grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  padding: 10px;
+}
+
+.item {
+  padding: 10px;
+}
+
+.itemTrash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputRegular {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 0px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  font-size: 15px;
+}
+
+.smallLabel {
+  font-size: 10px;
+}
+
+.addItem {
+  background: #eeeeee;
+  grid-area: add-item;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 20px;
+}
+
+.buttonTrash {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.buttonTrash:hover {
+  background-color: #f7fafa;
+}
+
+.buttonTrash:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.buttonRegular {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: rgba(155, 158, 158, 0.5) 0 2px 5px 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonRegular:hover {
+  background-color: #f7fafa;
+}
+
+.buttonRegular:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}

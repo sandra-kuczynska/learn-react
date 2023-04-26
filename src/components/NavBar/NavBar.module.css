@@ -1,0 +1,11 @@
+.MobileNavigation {
+  display: none;
+}
+
+.NavBar {
+  width: 100%;
+  background: #3f52b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

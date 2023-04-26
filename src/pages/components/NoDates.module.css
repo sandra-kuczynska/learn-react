@@ -1,0 +1,43 @@
+.noDates {
+  display: grid;
+  background: #eeeeee;
+  grid-area: no-dates;
+  font-size: 10px;
+  padding: 20px;
+}
+
+.wrapperNoDates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "no no"
+    "from to";
+}
+
+.no {
+  grid-area: no;
+  padding: 10px;
+}
+
+.from {
+  grid-area: from;
+  padding: 10px;
+}
+
+.to {
+  grid-area: to;
+  padding: 10px;
+}
+
+.inputRegular {
+  font-size: 15px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
